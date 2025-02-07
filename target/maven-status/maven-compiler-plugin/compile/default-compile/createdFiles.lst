@@ -1,0 +1,5 @@
+org/ISAAC/iSAAC/commands/LoginCommand.class
+org/ISAAC/iSAAC/RANK.class
+org/ISAAC/iSAAC/RankManager.class
+org/ISAAC/iSAAC/commands/RegisterCommand.class
+org/ISAAC/iSAAC/ISAAC.class

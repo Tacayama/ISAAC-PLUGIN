@@ -1,0 +1,23 @@
+name: ISAAC
+version: '1.0-SNAPSHOT'
+main: org.ISAAC.iSAAC.ISAAC
+api: '1.0'
+api-version: '1.21'
+
+commands:
+  login:
+    description: Se connecter au serveur.
+    usage: /login <password>
+    permission: isaac.command.login
+  register:
+    description: S'enregistrer sur le serveur.
+    usage: /register <password> <confirm_password>
+    permission: isaac.command.register
+
+permissions:
+  isaac.command.login:
+    description: Permet aux joueurs non connectés d'utiliser la commande /login
+    default: true
+  isaac.command.register:
+    description: Permet aux joueurs non connectés d'utiliser la commande /register
+    default: true

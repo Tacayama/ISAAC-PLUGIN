@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="isaac:jar">
+    <output-path>$PROJECT_DIR$/../mc-serv/minecraft-data/plugins</output-path>
+    <root id="archive" name="isaac.jar">
+      <element id="module-output" name="isaac" />
+    </root>
+  </artifact>
+</component>
