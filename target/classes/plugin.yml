@@ -1,5 +1,5 @@
 name: ISAAC
-version: '1.0-SNAPSHOT'
+version: '1.0'
 main: org.ISAAC.iSAAC.ISAAC
 api: '1.0'
 api-version: '1.21'
