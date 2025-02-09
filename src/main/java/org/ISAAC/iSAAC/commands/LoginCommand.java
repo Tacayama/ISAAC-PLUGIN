@@ -37,7 +37,7 @@ public class LoginCommand implements CommandExecutor {
 
             if (args.length < 1) {
                 player.sendMessage(ChatColor.RED + "Usage: /login <password>");
-                return false;
+                return true;
             }
 
             String password = args[0];
@@ -76,8 +76,12 @@ public class LoginCommand implements CommandExecutor {
             if (response.statusCode() == 201) {
                 String responseBody = response.body();
                 String rank = extractRankFromJson(responseBody);
-                rankManager.AddToRANKlist(player, rank);
-                return true;
+                Boolean succes = extractSuccesFromJson(responseBody);
+                if (succes) {
+                    rankManager.AddToRANKlist(player, rank);
+                    return true;
+                }
+                return false;
             }
             return false;
         } catch (IOException | InterruptedException | java.net.URISyntaxException e) {
@@ -94,5 +98,15 @@ public class LoginCommand implements CommandExecutor {
             return matcher.group(1);
         }
         return null;
+    }
+
+    private boolean extractSuccesFromJson(String json) {
+        Pattern pattern = Pattern.compile("\"result\"\\s*:\\s*(true|false)");
+        Matcher matcher = pattern.matcher(json);
+
+        if (matcher.find()) {
+            return Boolean.parseBoolean(matcher.group(1));
+        }
+        return false;
     }
 }
