@@ -31,6 +31,12 @@ public class RankManager {
         this.twitch.allowedCommands.add("minecraft.command.ban");
         this.twitch.allowedCommands.add("minecraft.command.kick");
         this.twitch.allowedCommands.add("minecraft.command.time");
+        this.twitch.allowedCommands.add("bukkit.command.seed");
+        this.twitch.allowedCommands.add("bukkit.command.weather");
+        this.twitch.allowedCommands.add("bukkit.command.whitelist");
+        this.twitch.allowedCommands.add("bukkit.command.ban");
+        this.twitch.allowedCommands.add("bukkit.command.kick");
+        this.twitch.allowedCommands.add("bukkit.command.time");
 
         this.admin.allowedCommands.add("minecraft.command.weather");
         this.admin.allowedCommands.add("minecraft.command.time");
@@ -45,6 +51,12 @@ public class RankManager {
         this.admin.allowedCommands.add("minecraft.command.whitelist");
         this.admin.allowedCommands.add("minecraft.command.op");
         this.admin.allowedCommands.add("minecraft.command.deop");
+        this.admin.allowedCommands.add("bukkit.command.kick");
+        this.admin.allowedCommands.add("bukkit.command.ban");
+        this.admin.allowedCommands.add("bukkit.command.unban");
+        this.admin.allowedCommands.add("bukkit.command.whitelist");
+        this.admin.allowedCommands.add("bukkit.command.op");
+        this.admin.allowedCommands.add("bukkit.command.deop");
         this.admin.allowedCommands.add("bukkit.command.reload");
         this.admin.allowedCommands.add("bukkit.command.stop");
         this.admin.allowedCommands.add("bukkit.command.save");
