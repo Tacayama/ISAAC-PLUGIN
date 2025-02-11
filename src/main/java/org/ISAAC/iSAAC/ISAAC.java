@@ -2,6 +2,7 @@
 
     import org.ISAAC.iSAAC.commands.LoginCommand;
     import org.ISAAC.iSAAC.commands.RegisterCommand;
+    import org.ISAAC.iSAAC.commands.VanishCommand;
     import org.bukkit.Bukkit;
     import org.bukkit.ChatColor;
     import org.bukkit.entity.Player;
@@ -38,7 +39,7 @@
             
             this.getCommand("login").setExecutor(new LoginCommand(this, rankManager));
             this.getCommand("register").setExecutor(new RegisterCommand());
-            
+            this.getCommand("vanish").setExecutor(new VanishCommand());
         }
 
         @Override

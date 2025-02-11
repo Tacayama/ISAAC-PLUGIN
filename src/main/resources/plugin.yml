@@ -13,6 +13,10 @@ commands:
     description: S'enregistrer sur le serveur.
     usage: /register <password> <confirm_password>
     permission: isaac.command.register
+  vanish:
+    description: Se rendre invisible.
+    usage: /vanish
+    permission: isaac.command.vanish
 
 permissions:
   isaac.command.login:
@@ -21,3 +25,6 @@ permissions:
   isaac.command.register:
     description: Permet aux joueurs non connectés d'utiliser la commande /register
     default: true
+  isaac.command.vanish:
+    description: Permet aux joueurs de se rendre invisible
+    default: op

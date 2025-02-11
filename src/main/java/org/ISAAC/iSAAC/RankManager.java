@@ -23,14 +23,9 @@ public class RankManager {
         this.modo.allowedCommands.add("minecraft.command.weather");
         this.modo.allowedCommands.add("minecraft.command.kick");
         this.modo.allowedCommands.add("minecraft.command.time");
+        this.modo.allowedCommands.remove("minecraft.command.vanish");
 
         this.twitch.allowedCommands.add("minecraft.command.seed");
-        this.twitch.allowedCommands.add("minecraft.command.weather");
-        this.twitch.allowedCommands.add("minecraft.command.whitelist");
-        this.twitch.allowedCommands.add("minecraft.command.ban");
-        this.twitch.allowedCommands.add("minecraft.command.kick");
-        this.twitch.allowedCommands.add("minecraft.command.time");
-
         this.twitch.allowedCommands.add("minecraft.command.weather");
         this.twitch.allowedCommands.add("minecraft.command.whitelist");
         this.twitch.allowedCommands.add("minecraft.command.ban");
@@ -50,16 +45,11 @@ public class RankManager {
         this.admin.allowedCommands.add("minecraft.command.whitelist");
         this.admin.allowedCommands.add("minecraft.command.op");
         this.admin.allowedCommands.add("minecraft.command.deop");
-        this.admin.allowedCommands.add("bukkit.command.kick");
-        this.admin.allowedCommands.add("bukkit.command.ban");
-        this.admin.allowedCommands.add("bukkit.command.unban");
-        this.admin.allowedCommands.add("bukkit.command.whitelist");
-        this.admin.allowedCommands.add("bukkit.command.op");
-        this.admin.allowedCommands.add("bukkit.command.deop");
         this.admin.allowedCommands.add("bukkit.command.reload");
         this.admin.allowedCommands.add("bukkit.command.stop");
         this.admin.allowedCommands.add("bukkit.command.save");
         this.admin.allowedCommands.add("minecraft.command.seed");
+        this.admin.allowedCommands.add("minecraft.command.vanish");
 
     }
 
@@ -67,9 +57,6 @@ public class RankManager {
         PermissionAttachment attachment = player.addAttachment(plugin);
         if (rank != null) {
             switch (rank.toUpperCase()) {
-                case "NORMAL":
-                    plugin.ranklist.put(player.getUniqueId(), normal);
-                    break;
                 case "MODO":
                     plugin.ranklist.put(player.getUniqueId(), modo);
                     break;
