@@ -23,7 +23,7 @@ public class RankManager {
         this.modo.allowedCommands.add("minecraft.command.weather");
         this.modo.allowedCommands.add("minecraft.command.kick");
         this.modo.allowedCommands.add("minecraft.command.time");
-        this.modo.allowedCommands.remove("minecraft.command.vanish");
+        this.modo.allowedCommands.remove("isaac.command.vanish");
 
         this.twitch.allowedCommands.add("minecraft.command.seed");
         this.twitch.allowedCommands.add("minecraft.command.weather");
@@ -37,6 +37,7 @@ public class RankManager {
         this.twitch.allowedCommands.add("bukkit.command.ban");
         this.twitch.allowedCommands.add("bukkit.command.kick");
         this.twitch.allowedCommands.add("bukkit.command.time");
+        this.twitch.allowedCommands.remove("isaac.command.vanish");
 
         this.admin.allowedCommands.add("minecraft.command.weather");
         this.admin.allowedCommands.add("minecraft.command.time");
@@ -61,7 +62,7 @@ public class RankManager {
         this.admin.allowedCommands.add("bukkit.command.stop");
         this.admin.allowedCommands.add("bukkit.command.save");
         this.admin.allowedCommands.add("minecraft.command.seed");
-        this.admin.allowedCommands.add("minecraft.command.vanish");
+        this.admin.allowedCommands.add("isaac.command.vanish");
 
     }
 
