@@ -24,6 +24,7 @@
     public final class ISAAC extends JavaPlugin implements Listener {
 
         private RankManager rankManager;
+        private Scoreboard scoreboard;
 
         public final HashSet<UUID> loggedInPlayers = new HashSet<>();
         public final HashSet<UUID> WarnedPlayer = new HashSet<>(); 
@@ -102,17 +103,26 @@
             event.setFormat(formattedMessage);
         }
 
+        public void setupScoreboard() {
+            ScoreboardManager manager = Bukkit.getScoreboardManager();
+            scoreboard = manager.getNewScoreboard();
+        }
+
         @SuppressWarnings("deprecation")
         public void setPlayerTabRank(Player player, RANK rank) {
-            ScoreboardManager manager  = Bukkit.getScoreboardManager();
-            Scoreboard scoreboard = manager.getNewScoreboard();
+            if (scoreboard == null) {
+                setupScoreboard();
+            }
 
-            Team team = scoreboard.registerNewTeam(player.getName());
+            Team team = scoreboard.getTeam(player.getName());
+            if (team == null) {
+                team = scoreboard.registerNewTeam(player.getName());
+            }
             team.addEntry(player.getName());
 
             if (rank == null) {
                 team.setPrefix(ChatColor.DARK_RED + " [Non Connecté] ");
-            }else {
+            } else {
                 switch (rank.getName().toUpperCase()) {
                     case "ADMIN":
                         team.setPrefix(ChatColor.RED + " [ADMIN] ");
@@ -129,6 +139,8 @@
                 }
             }
 
-            player.setScoreboard(scoreboard);
+            for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+                onlinePlayer.setScoreboard(scoreboard);
+            }
         }
     }
